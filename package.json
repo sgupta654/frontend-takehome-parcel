@@ -5,9 +5,10 @@
   "main": "server.js",
   "scripts": {
     "build": "./node_modules/.bin/parcel build ./index.html",
-    "dev": "concurrently './node_modules/.bin/parcel ./index.html' 'node ./server'",
+    "dev": "concurrently 'parcel index.html' 'node ./server'",
     "start": "NODE_ENV=production node ./server",
-    "test": "echo 'Your test command goes here'"
+    "test": "jest --config ./jest.config.json",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -20,8 +21,32 @@
   },
   "homepage": "https://github.com/UseFedora/frontend-takehome-parcel#readme",
   "dependencies": {
+    "@emotion/babel-preset-css-prop": "^10.0.27",
+    "@emotion/core": "^10.0.28",
+    "components": "^0.1.0",
     "concurrently": "^4.0.1",
     "express": "^4.16.3",
-    "parcel": "^1.9.7"
+    "local-storage": "^2.0.0",
+    "parcel": "^1.9.7",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/plugin-transform-async-to-generator": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "babel-plugin-jsx-pragmatic": "^1.0.2",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
+    "babel-plugin-transform-node-env-inline": "^0.4.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest": "^26.1.0",
+    "parcel-bundler": "^1.12.4",
+    "react-test-renderer": "^16.13.1"
   }
 }
